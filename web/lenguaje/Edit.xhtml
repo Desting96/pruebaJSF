@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditLenguajeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditLenguajeLabel_idLenguaje}" for="idLenguaje" />
+                    <h:inputText id="idLenguaje" value="#{lenguajeController.selected.idLenguaje}" title="#{bundle.EditLenguajeTitle_idLenguaje}" required="true" requiredMessage="#{bundle.EditLenguajeRequiredMessage_idLenguaje}"/>
+                    <h:outputLabel value="#{bundle.EditLenguajeLabel_lenguaje}" for="lenguaje" />
+                    <h:inputText id="lenguaje" value="#{lenguajeController.selected.lenguaje}" title="#{bundle.EditLenguajeTitle_lenguaje}" required="true" requiredMessage="#{bundle.EditLenguajeRequiredMessage_lenguaje}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{lenguajeController.update}" value="#{bundle.EditLenguajeSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditLenguajeViewLink}"/>
+                <br />
+                <h:commandLink action="#{lenguajeController.prepareList}" value="#{bundle.EditLenguajeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditLenguajeIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

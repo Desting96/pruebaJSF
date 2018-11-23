@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewVideohasLenguajeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewVideohasLenguajeLabel_idVideohasLenguaje}"/>
+                    <h:outputText value="#{videohasLenguajeController.selected.idVideohasLenguaje}" title="#{bundle.ViewVideohasLenguajeTitle_idVideohasLenguaje}"/>
+                    <h:outputText value="#{bundle.ViewVideohasLenguajeLabel_lenguajeidLenguaje}"/>
+                    <h:outputText value="#{videohasLenguajeController.selected.lenguajeidLenguaje}" title="#{bundle.ViewVideohasLenguajeTitle_lenguajeidLenguaje}"/>
+                    <h:outputText value="#{bundle.ViewVideohasLenguajeLabel_videoidVideo}"/>
+                    <h:outputText value="#{videohasLenguajeController.selected.videoidVideo}" title="#{bundle.ViewVideohasLenguajeTitle_videoidVideo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{videohasLenguajeController.destroyAndView}" value="#{bundle.ViewVideohasLenguajeDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewVideohasLenguajeEditLink}"/>
+                <br />
+                <h:commandLink action="#{videohasLenguajeController.prepareCreate}" value="#{bundle.ViewVideohasLenguajeCreateLink}" />
+                <br />
+                <h:commandLink action="#{videohasLenguajeController.prepareList}" value="#{bundle.ViewVideohasLenguajeShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewVideohasLenguajeIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

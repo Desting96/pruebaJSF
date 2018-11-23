@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditGenerohasInfoVideoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditGenerohasInfoVideoLabel_idGenerohasInfoVideo}" for="idGenerohasInfoVideo" />
+                    <h:inputText id="idGenerohasInfoVideo" value="#{generohasInfoVideoController.selected.idGenerohasInfoVideo}" title="#{bundle.EditGenerohasInfoVideoTitle_idGenerohasInfoVideo}" required="true" requiredMessage="#{bundle.EditGenerohasInfoVideoRequiredMessage_idGenerohasInfoVideo}"/>
+                    <h:outputLabel value="#{bundle.EditGenerohasInfoVideoLabel_generoidGenero}" for="generoidGenero" />
+                    <h:selectOneMenu id="generoidGenero" value="#{generohasInfoVideoController.selected.generoidGenero}" title="#{bundle.EditGenerohasInfoVideoTitle_generoidGenero}" required="true" requiredMessage="#{bundle.EditGenerohasInfoVideoRequiredMessage_generoidGenero}">
+                        <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditGenerohasInfoVideoLabel_infoVideoidInfoVideo}" for="infoVideoidInfoVideo" />
+                    <h:selectOneMenu id="infoVideoidInfoVideo" value="#{generohasInfoVideoController.selected.infoVideoidInfoVideo}" title="#{bundle.EditGenerohasInfoVideoTitle_infoVideoidInfoVideo}" required="true" requiredMessage="#{bundle.EditGenerohasInfoVideoRequiredMessage_infoVideoidInfoVideo}">
+                        <f:selectItems value="#{infoVideoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{generohasInfoVideoController.update}" value="#{bundle.EditGenerohasInfoVideoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditGenerohasInfoVideoViewLink}"/>
+                <br />
+                <h:commandLink action="#{generohasInfoVideoController.prepareList}" value="#{bundle.EditGenerohasInfoVideoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditGenerohasInfoVideoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

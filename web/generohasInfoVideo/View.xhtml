@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewGenerohasInfoVideoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewGenerohasInfoVideoLabel_idGenerohasInfoVideo}"/>
+                    <h:outputText value="#{generohasInfoVideoController.selected.idGenerohasInfoVideo}" title="#{bundle.ViewGenerohasInfoVideoTitle_idGenerohasInfoVideo}"/>
+                    <h:outputText value="#{bundle.ViewGenerohasInfoVideoLabel_generoidGenero}"/>
+                    <h:outputText value="#{generohasInfoVideoController.selected.generoidGenero}" title="#{bundle.ViewGenerohasInfoVideoTitle_generoidGenero}"/>
+                    <h:outputText value="#{bundle.ViewGenerohasInfoVideoLabel_infoVideoidInfoVideo}"/>
+                    <h:outputText value="#{generohasInfoVideoController.selected.infoVideoidInfoVideo}" title="#{bundle.ViewGenerohasInfoVideoTitle_infoVideoidInfoVideo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{generohasInfoVideoController.destroyAndView}" value="#{bundle.ViewGenerohasInfoVideoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewGenerohasInfoVideoEditLink}"/>
+                <br />
+                <h:commandLink action="#{generohasInfoVideoController.prepareCreate}" value="#{bundle.ViewGenerohasInfoVideoCreateLink}" />
+                <br />
+                <h:commandLink action="#{generohasInfoVideoController.prepareList}" value="#{bundle.ViewGenerohasInfoVideoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewGenerohasInfoVideoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

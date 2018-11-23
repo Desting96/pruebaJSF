@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateVideohasLenguajeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateVideohasLenguajeLabel_idVideohasLenguaje}" for="idVideohasLenguaje" />
+                    <h:inputText id="idVideohasLenguaje" value="#{videohasLenguajeController.selected.idVideohasLenguaje}" title="#{bundle.CreateVideohasLenguajeTitle_idVideohasLenguaje}" required="true" requiredMessage="#{bundle.CreateVideohasLenguajeRequiredMessage_idVideohasLenguaje}"/>
+                    <h:outputLabel value="#{bundle.CreateVideohasLenguajeLabel_lenguajeidLenguaje}" for="lenguajeidLenguaje" />
+                    <h:selectOneMenu id="lenguajeidLenguaje" value="#{videohasLenguajeController.selected.lenguajeidLenguaje}" title="#{bundle.CreateVideohasLenguajeTitle_lenguajeidLenguaje}" required="true" requiredMessage="#{bundle.CreateVideohasLenguajeRequiredMessage_lenguajeidLenguaje}">
+                        <f:selectItems value="#{lenguajeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateVideohasLenguajeLabel_videoidVideo}" for="videoidVideo" />
+                    <h:selectOneMenu id="videoidVideo" value="#{videohasLenguajeController.selected.videoidVideo}" title="#{bundle.CreateVideohasLenguajeTitle_videoidVideo}" required="true" requiredMessage="#{bundle.CreateVideohasLenguajeRequiredMessage_videoidVideo}">
+                        <f:selectItems value="#{videoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{videohasLenguajeController.create}" value="#{bundle.CreateVideohasLenguajeSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{videohasLenguajeController.prepareList}" value="#{bundle.CreateVideohasLenguajeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateVideohasLenguajeIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

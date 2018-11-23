@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditVideoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditVideoLabel_idVideo}" for="idVideo" />
+                    <h:inputText id="idVideo" value="#{videoController.selected.idVideo}" title="#{bundle.EditVideoTitle_idVideo}" required="true" requiredMessage="#{bundle.EditVideoRequiredMessage_idVideo}"/>
+                    <h:outputLabel value="#{bundle.EditVideoLabel_nombreCapitulo}" for="nombreCapitulo" />
+                    <h:inputText id="nombreCapitulo" value="#{videoController.selected.nombreCapitulo}" title="#{bundle.EditVideoTitle_nombreCapitulo}" required="true" requiredMessage="#{bundle.EditVideoRequiredMessage_nombreCapitulo}"/>
+                    <h:outputLabel value="#{bundle.EditVideoLabel_duracion}" for="duracion" />
+                    <h:inputText id="duracion" value="#{videoController.selected.duracion}" title="#{bundle.EditVideoTitle_duracion}" required="true" requiredMessage="#{bundle.EditVideoRequiredMessage_duracion}"/>
+                    <h:outputLabel value="#{bundle.EditVideoLabel_video}" for="video" />
+                    <h:inputText id="video" value="#{videoController.selected.video}" title="#{bundle.EditVideoTitle_video}" required="true" requiredMessage="#{bundle.EditVideoRequiredMessage_video}"/>
+                    <h:outputLabel value="#{bundle.EditVideoLabel_isan}" for="isan" />
+                    <h:inputText id="isan" value="#{videoController.selected.isan}" title="#{bundle.EditVideoTitle_isan}" required="true" requiredMessage="#{bundle.EditVideoRequiredMessage_isan}"/>
+                    <h:outputLabel value="#{bundle.EditVideoLabel_infoVideoidInfoVideo}" for="infoVideoidInfoVideo" />
+                    <h:selectOneMenu id="infoVideoidInfoVideo" value="#{videoController.selected.infoVideoidInfoVideo}" title="#{bundle.EditVideoTitle_infoVideoidInfoVideo}" required="true" requiredMessage="#{bundle.EditVideoRequiredMessage_infoVideoidInfoVideo}">
+                        <f:selectItems value="#{infoVideoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{videoController.update}" value="#{bundle.EditVideoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditVideoViewLink}"/>
+                <br />
+                <h:commandLink action="#{videoController.prepareList}" value="#{bundle.EditVideoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditVideoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

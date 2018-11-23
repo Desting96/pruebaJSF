@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListVideohasSubtituloTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListVideohasSubtituloEmpty}" rendered="#{videohasSubtituloController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{videohasSubtituloController.items.rowCount > 0}">
+                    <h:outputText value="#{videohasSubtituloController.pagination.pageFirstItem + 1}..#{videohasSubtituloController.pagination.pageLastItem + 1}/#{videohasSubtituloController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{videohasSubtituloController.previous}" value="#{bundle.Previous} #{videohasSubtituloController.pagination.pageSize}" rendered="#{videohasSubtituloController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{videohasSubtituloController.next}" value="#{bundle.Next} #{videohasSubtituloController.pagination.pageSize}" rendered="#{videohasSubtituloController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{videohasSubtituloController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListVideohasSubtituloTitle_idVideohasSubtitulo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idVideohasSubtitulo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListVideohasSubtituloTitle_subtituloidSubtitulo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.subtituloidSubtitulo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListVideohasSubtituloTitle_videoidVideo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.videoidVideo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{videohasSubtituloController.prepareView}" value="#{bundle.ListVideohasSubtituloViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{videohasSubtituloController.prepareEdit}" value="#{bundle.ListVideohasSubtituloEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{videohasSubtituloController.destroy}" value="#{bundle.ListVideohasSubtituloDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{videohasSubtituloController.prepareCreate}" value="#{bundle.ListVideohasSubtituloCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListVideohasSubtituloIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

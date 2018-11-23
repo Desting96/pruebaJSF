@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCarritoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCarritoLabel_idCarrito}" for="idCarrito" />
+                    <h:inputText id="idCarrito" value="#{carritoController.selected.idCarrito}" title="#{bundle.CreateCarritoTitle_idCarrito}" required="true" requiredMessage="#{bundle.CreateCarritoRequiredMessage_idCarrito}"/>
+                    <h:outputLabel value="#{bundle.CreateCarritoLabel_precioTotal}" for="precioTotal" />
+                    <h:inputText id="precioTotal" value="#{carritoController.selected.precioTotal}" title="#{bundle.CreateCarritoTitle_precioTotal}" required="true" requiredMessage="#{bundle.CreateCarritoRequiredMessage_precioTotal}"/>
+                    <h:outputLabel value="#{bundle.CreateCarritoLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{carritoController.selected.fecha}" title="#{bundle.CreateCarritoTitle_fecha}" required="true" requiredMessage="#{bundle.CreateCarritoRequiredMessage_fecha}"/>
+                    <h:outputLabel value="#{bundle.CreateCarritoLabel_estado}" for="estado" />
+                    <h:inputText id="estado" value="#{carritoController.selected.estado}" title="#{bundle.CreateCarritoTitle_estado}" required="true" requiredMessage="#{bundle.CreateCarritoRequiredMessage_estado}"/>
+                    <h:outputLabel value="#{bundle.CreateCarritoLabel_usuarioidUsuario}" for="usuarioidUsuario" />
+                    <h:selectOneMenu id="usuarioidUsuario" value="#{carritoController.selected.usuarioidUsuario}" title="#{bundle.CreateCarritoTitle_usuarioidUsuario}" required="true" requiredMessage="#{bundle.CreateCarritoRequiredMessage_usuarioidUsuario}">
+                        <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{carritoController.create}" value="#{bundle.CreateCarritoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{carritoController.prepareList}" value="#{bundle.CreateCarritoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCarritoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

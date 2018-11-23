@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCarritohasInfoVideoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCarritohasInfoVideoLabel_idCarritohasInfoVideo}" for="idCarritohasInfoVideo" />
+                    <h:inputText id="idCarritohasInfoVideo" value="#{carritohasInfoVideoController.selected.idCarritohasInfoVideo}" title="#{bundle.EditCarritohasInfoVideoTitle_idCarritohasInfoVideo}" required="true" requiredMessage="#{bundle.EditCarritohasInfoVideoRequiredMessage_idCarritohasInfoVideo}"/>
+                    <h:outputLabel value="#{bundle.EditCarritohasInfoVideoLabel_cantidad}" for="cantidad" />
+                    <h:inputText id="cantidad" value="#{carritohasInfoVideoController.selected.cantidad}" title="#{bundle.EditCarritohasInfoVideoTitle_cantidad}" required="true" requiredMessage="#{bundle.EditCarritohasInfoVideoRequiredMessage_cantidad}"/>
+                    <h:outputLabel value="#{bundle.EditCarritohasInfoVideoLabel_carritoidCarrito}" for="carritoidCarrito" />
+                    <h:selectOneMenu id="carritoidCarrito" value="#{carritohasInfoVideoController.selected.carritoidCarrito}" title="#{bundle.EditCarritohasInfoVideoTitle_carritoidCarrito}" required="true" requiredMessage="#{bundle.EditCarritohasInfoVideoRequiredMessage_carritoidCarrito}">
+                        <f:selectItems value="#{carritoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditCarritohasInfoVideoLabel_infoVideoidInfoVideo}" for="infoVideoidInfoVideo" />
+                    <h:selectOneMenu id="infoVideoidInfoVideo" value="#{carritohasInfoVideoController.selected.infoVideoidInfoVideo}" title="#{bundle.EditCarritohasInfoVideoTitle_infoVideoidInfoVideo}" required="true" requiredMessage="#{bundle.EditCarritohasInfoVideoRequiredMessage_infoVideoidInfoVideo}">
+                        <f:selectItems value="#{infoVideoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{carritohasInfoVideoController.update}" value="#{bundle.EditCarritohasInfoVideoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCarritohasInfoVideoViewLink}"/>
+                <br />
+                <h:commandLink action="#{carritohasInfoVideoController.prepareList}" value="#{bundle.EditCarritohasInfoVideoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCarritohasInfoVideoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

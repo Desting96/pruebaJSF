@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRolUsuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRolUsuarioLabel_idRolUsuario}" for="idRolUsuario" />
+                    <h:inputText id="idRolUsuario" value="#{rolUsuarioController.selected.idRolUsuario}" title="#{bundle.CreateRolUsuarioTitle_idRolUsuario}" required="true" requiredMessage="#{bundle.CreateRolUsuarioRequiredMessage_idRolUsuario}"/>
+                    <h:outputLabel value="#{bundle.CreateRolUsuarioLabel_rolUsuario}" for="rolUsuario" />
+                    <h:inputText id="rolUsuario" value="#{rolUsuarioController.selected.rolUsuario}" title="#{bundle.CreateRolUsuarioTitle_rolUsuario}" required="true" requiredMessage="#{bundle.CreateRolUsuarioRequiredMessage_rolUsuario}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{rolUsuarioController.create}" value="#{bundle.CreateRolUsuarioSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{rolUsuarioController.prepareList}" value="#{bundle.CreateRolUsuarioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateRolUsuarioIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
