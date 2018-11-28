@@ -105,7 +105,7 @@ public class Clasificacion implements Serializable {
 
     @Override
     public String toString() {
-        return "entidades.Clasificacion[ idClasificacion=" + idClasificacion + " ]";
+        return "" + clasificacion + "";
     }
     
 }

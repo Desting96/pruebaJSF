@@ -105,7 +105,7 @@ public class RolUsuario implements Serializable {
 
     @Override
     public String toString() {
-        return "entidades.RolUsuario[ idRolUsuario=" + idRolUsuario + " ]";
+        return "" + rolUsuario + "";
     }
     
 }

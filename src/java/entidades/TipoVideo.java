@@ -105,7 +105,7 @@ public class TipoVideo implements Serializable {
 
     @Override
     public String toString() {
-        return "entidades.TipoVideo[ idTipoVideo=" + idTipoVideo + " ]";
+        return "" + tipoVideo + "";
     }
     
 }
