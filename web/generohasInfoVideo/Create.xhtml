@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateGenerohasInfoVideoLabel_idGenerohasInfoVideo}" for="idGenerohasInfoVideo" />
-                    <h:inputText id="idGenerohasInfoVideo" value="#{generohasInfoVideoController.selected.idGenerohasInfoVideo}" title="#{bundle.CreateGenerohasInfoVideoTitle_idGenerohasInfoVideo}" required="true" requiredMessage="#{bundle.CreateGenerohasInfoVideoRequiredMessage_idGenerohasInfoVideo}"/>
                     <h:outputLabel value="#{bundle.CreateGenerohasInfoVideoLabel_generoidGenero}" for="generoidGenero" />
                     <h:selectOneMenu id="generoidGenero" value="#{generohasInfoVideoController.selected.generoidGenero}" title="#{bundle.CreateGenerohasInfoVideoTitle_generoidGenero}" required="true" requiredMessage="#{bundle.CreateGenerohasInfoVideoRequiredMessage_generoidGenero}">
                         <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>

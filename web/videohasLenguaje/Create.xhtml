@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateVideohasLenguajeLabel_idVideohasLenguaje}" for="idVideohasLenguaje" />
-                    <h:inputText id="idVideohasLenguaje" value="#{videohasLenguajeController.selected.idVideohasLenguaje}" title="#{bundle.CreateVideohasLenguajeTitle_idVideohasLenguaje}" required="true" requiredMessage="#{bundle.CreateVideohasLenguajeRequiredMessage_idVideohasLenguaje}"/>
                     <h:outputLabel value="#{bundle.CreateVideohasLenguajeLabel_lenguajeidLenguaje}" for="lenguajeidLenguaje" />
                     <h:selectOneMenu id="lenguajeidLenguaje" value="#{videohasLenguajeController.selected.lenguajeidLenguaje}" title="#{bundle.CreateVideohasLenguajeTitle_lenguajeidLenguaje}" required="true" requiredMessage="#{bundle.CreateVideohasLenguajeRequiredMessage_lenguajeidLenguaje}">
                         <f:selectItems value="#{lenguajeController.itemsAvailableSelectOne}"/>

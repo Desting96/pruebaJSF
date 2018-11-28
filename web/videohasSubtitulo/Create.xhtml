@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateVideohasSubtituloLabel_idVideohasSubtitulo}" for="idVideohasSubtitulo" />
-                    <h:inputText id="idVideohasSubtitulo" value="#{videohasSubtituloController.selected.idVideohasSubtitulo}" title="#{bundle.CreateVideohasSubtituloTitle_idVideohasSubtitulo}" required="true" requiredMessage="#{bundle.CreateVideohasSubtituloRequiredMessage_idVideohasSubtitulo}"/>
                     <h:outputLabel value="#{bundle.CreateVideohasSubtituloLabel_subtituloidSubtitulo}" for="subtituloidSubtitulo" />
                     <h:selectOneMenu id="subtituloidSubtitulo" value="#{videohasSubtituloController.selected.subtituloidSubtitulo}" title="#{bundle.CreateVideohasSubtituloTitle_subtituloidSubtitulo}" required="true" requiredMessage="#{bundle.CreateVideohasSubtituloRequiredMessage_subtituloidSubtitulo}">
                         <f:selectItems value="#{subtituloController.itemsAvailableSelectOne}"/>
