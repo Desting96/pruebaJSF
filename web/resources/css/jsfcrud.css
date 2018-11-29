@@ -19,26 +19,26 @@ table {
 
 form.jsfcrud_list_form th, td th {
     font-size: x-small;
-    color: #4e6a71;
+    color: #e33b06;
     border-top-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
     border-right-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-top-color: #b2d5d6;
-    border-bottom-color: #b2d5d6;
-    border-left-color: #90b4bd;
-    border-right-color: #90b4bd;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-color: #3c763d;
+    border-bottom-color: #3c763d;
+    border-left-color: #3c763d;
+    border-right-color: #3c763d;
     letter-spacing: 3px;
     text-align: left;
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 6px;
     padding-right: 6px;
-    background-color: #b2d5d6;
+    background-color: #5cb85c;
 }
 
 td {
@@ -52,16 +52,17 @@ form.jsfcrud_list_form td, td td {
     border-bottom-style: solid;
     border-left-style: solid;
     border-right-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-top-color: #b2d5d6;
-    border-bottom-color: #b2d5d6;
-    border-left-color: #b2d5d6;
-    border-right-color: #b2d5d6;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-color: #3c763d;
+    border-bottom-color: #3c763d;
+    border-left-color: #3c763d;
+    border-right-color: #3c763d;
     vertical-align: baseline;
     padding-bottom: 0px;
+    background-color: #e0e1e1;
 }
 
 tr.jsfcrud_odd_row {
