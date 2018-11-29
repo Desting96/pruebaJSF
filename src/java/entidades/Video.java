@@ -173,7 +173,7 @@ public class Video implements Serializable {
 
     @Override
     public String toString() {
-        return "entidades.Video[ idVideo=" + idVideo + " ]";
+        return "" + idVideo + "";
     }
     
 }

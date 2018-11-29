@@ -42,7 +42,10 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVideoTitle_video}"/>
                             </f:facet>
-                            <h:outputText value="#{item.video}"/>
+                            <video width="320" height="240" controls="controls">
+                                <source src="../#{item.video}" type="video/mp4"></source>
+                                Tu navegador no implementa el elemento.
+                            </video>
                         </h:column>
                         <h:column>
                             <f:facet name="header">

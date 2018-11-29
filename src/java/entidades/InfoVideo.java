@@ -211,7 +211,7 @@ public class InfoVideo implements Serializable {
 
     @Override
     public String toString() {
-        return "entidades.InfoVideo[ idInfoVideo=" + idInfoVideo + " ]";
+        return "" + nombreVideo + "";
     }
     
 }
