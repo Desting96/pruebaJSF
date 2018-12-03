@@ -18,9 +18,9 @@
                     <h:outputText value="#{bundle.ViewVideohasLenguajeLabel_idVideohasLenguaje}"/>
                     <h:outputText value="#{videohasLenguajeController.selected.idVideohasLenguaje}" title="#{bundle.ViewVideohasLenguajeTitle_idVideohasLenguaje}"/>
                     <h:outputText value="#{bundle.ViewVideohasLenguajeLabel_lenguajeidLenguaje}"/>
-                    <h:outputText value="#{videohasLenguajeController.selected.lenguajeidLenguaje}" title="#{bundle.ViewVideohasLenguajeTitle_lenguajeidLenguaje}"/>
+                    <h:outputText value="#{videohasLenguajeController.selected.lenguajeidLenguaje.lenguaje}" title="#{bundle.ViewVideohasLenguajeTitle_lenguajeidLenguaje}"/>
                     <h:outputText value="#{bundle.ViewVideohasLenguajeLabel_videoidVideo}"/>
-                    <h:outputText value="#{videohasLenguajeController.selected.videoidVideo}" title="#{bundle.ViewVideohasLenguajeTitle_videoidVideo}"/>
+                    <h:outputText value="#{videohasLenguajeController.selected.videoidVideo.nombreCapitulo}" title="#{bundle.ViewVideohasLenguajeTitle_videoidVideo}"/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{videohasLenguajeController.destroyAndView}" value="#{bundle.ViewVideohasLenguajeDestroyLink}"/>
