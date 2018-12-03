@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <h:outputStylesheet name="css/jsfcrud.css"/>
         <h:outputStylesheet name="css/bootstrap.min.css"/>
@@ -9,44 +10,63 @@
         <h:outputStylesheet name="css/media.css"/>
         <h:outputStylesheet name="css/style.css"/>
     </h:head>
+
+    <nav id="navbar-auto-hidden">
+        <div class="row hidden-xs"><!-- Menu computadoras y tablets -->
+            <div class="col-xs-4">
+                <figure class="logo-navbar"></figure>
+                <p class="text-navbar tittles-pages-logo">VideoMinuto</p>
+            </div>
+            <div class="col-xs-8">
+                <div class="contenedor-tabla pull-right">
+                    <div class="contenedor-tr">
+                        <h:link outcome="/calificacion/List" value="Calificacion" class="table-cell-td"/>        
+                        <h:link outcome="/carrito/List" value="Carrito de compra" class="table-cell-td"/>
+                        <h:link outcome="/carritohasInfoVideo/List" value="Carritohas de compra Video " class="table-cell-td"/>
+                        <h:link outcome="/clasificacion/List" value=" Clasificacion " class="table-cell-td"/>
+                        <h:link outcome="/genero/List" value=" Genero " class="table-cell-td"/>
+                        <h:link outcome="/generohasInfoVideo/List" value="Informacion de genero deVideo" class="table-cell-td"/>
+                        <h:link outcome="/infoVideo/List" value="Informacion de Video " class="table-cell-td"/>
+                        <h:link outcome="/lenguaje/List" value="Lenguaje de video" class="table-cell-td"/>
+                        <h:link outcome="/persona/List" value="usuario" class="table-cell-td"/>
+                        <h:link outcome="/reparto/List" value="Reparto de video" class="table-cell-td"/>
+                        <h:link outcome="/rolUsuario/List" value="Rol de Usuario" class="table-cell-td"/>
+                        <h:link outcome="/solicitud/List" value="Solicitudes" class="table-cell-td"/>
+                        <h:link outcome="/subtitulo/List" value="Subtitulos de video" class="table-cell-td"/>
+                        <h:link outcome="/tipoVideo/List" value="Tipo de Video" class="table-cell-td"/>
+                        <h:link outcome="/usuario/List" value="Usuarios" class="table-cell-td"/>
+                        <h:link outcome="/video/List" value="Video" class="table-cell-td"/>
+                        <h:link outcome="/videohasLenguaje/List" value="lenguaje de Video" class="table-cell-td"/>
+                        <h:link outcome="/videohasSubtitulo/List" value="sptitulos de video" class="table-cell-td"/>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </nav>
+
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="/calificacion/List" value="Show All Calificacion Items"/>
-        <br />
-        <h:link outcome="/carrito/List" value="Show All Carrito Items"/>
-        <br />
-        <h:link outcome="/carritohasInfoVideo/List" value="Show All CarritohasInfoVideo Items"/>
-        <br />
-        <h:link outcome="/clasificacion/List" value="Show All Clasificacion Items"/>
-        <br />
-        <h:link outcome="/genero/List" value="Show All Genero Items"/>
-        <br />
-        <h:link outcome="/generohasInfoVideo/List" value="Show All GenerohasInfoVideo Items"/>
-        <br />
-        <h:link outcome="/infoVideo/List" value="Show All InfoVideo Items"/>
-        <br />
-        <h:link outcome="/lenguaje/List" value="Show All Lenguaje Items"/>
-        <br />
-        <h:link outcome="/persona/List" value="Show All Persona Items"/>
-        <br />
-        <h:link outcome="/reparto/List" value="Show All Reparto Items"/>
-        <br />
-        <h:link outcome="/rolUsuario/List" value="Show All RolUsuario Items"/>
-        <br />
-        <h:link outcome="/solicitud/List" value="Show All Solicitud Items"/>
-        <br />
-        <h:link outcome="/subtitulo/List" value="Show All Subtitulo Items"/>
-        <br />
-        <h:link outcome="/tipoVideo/List" value="Show All TipoVideo Items"/>
-        <br />
-        <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
-        <br />
-        <h:link outcome="/video/List" value="Show All Video Items"/>
-        <br />
-        <h:link outcome="/videohasLenguaje/List" value="Show All VideohasLenguaje Items"/>
-        <br />
-        <h:link outcome="/videohasSubtitulo/List" value="Show All VideohasSubtitulo Items"/>
+        <div class="jumbotron" id="jumbotron-index">
+            <h1><span class="tittles-pages-logo">VideoMinuto</span> <small style="color: #58FA58;"></small></h1>
+            <p>
+                Bienvenido a VideoMinuto, aqui podrás encontrar difrentes peliculas, series y colecciones para ti y tu familia.
+            </p>
+        </div>
+
+        <f:view>
+            <h:form>
+                <h:dataTable value="#{beanVideo.dashsachVideo()}" var="chay" border="1" cellpadding="2" cellspacing="2">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet> #{chay.idVideo}<br/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">nombreCapitulo</f:facet> #{chay.nombreCapitulo}<br/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">nombreVideo</f:facet> #{chay.infoVideoidInfoVideo.nombreVideo}<br/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view> 
     </h:body>
 </html>
 

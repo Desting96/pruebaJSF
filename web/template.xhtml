@@ -11,16 +11,18 @@
         <h:outputStylesheet name="css/bootstrap.min.css"/>
         <h:outputStylesheet name="css/font-awesome.min.css"/>
         <h:outputStylesheet name="css/media.css"/>
-        <h:outputStylesheet name="css/style.css"/>
+        <h:outputStylesheet name="css/style.css"/>        
     </h:head>
 
     <h:body>
-        <h1>
-            <ui:insert name="title">Default Title</ui:insert>
-        </h1>
-        <p>
-            <ui:insert name="body">Default Body</ui:insert>
-        </p>
+        <section id="store">
+            <div class="page-header">
+                <h1><ui:insert name="title">Default Title</ui:insert></h1>
+            </div>
+            <p>
+                <ui:insert name="body">Default Body</ui:insert>
+            </p>
+        </section>
     </h:body>
 
 </html>

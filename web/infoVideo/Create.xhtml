@@ -5,42 +5,81 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
+    <nav id="navbar-auto-hidden">
+        <div class="row hidden-xs"><!-- Menu computadoras y tablets -->
+            <div class="col-xs-4">
+                <figure class="logo-navbar"></figure>
+                <p class="text-navbar tittles-pages-logo">VideoMinuto</p>
+            </div>
+            <div class="col-xs-8">
+                <div class="contenedor-tabla pull-right">
+                    <div class="contenedor-tr">                        
+                        <h:link outcome="/index" value="#{bundle.CreateInfoVideoIndexLink}" class="table-cell-td"/>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </nav>   
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateInfoVideoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateInfoVideoLabel_nombreVideo}" for="nombreVideo" />
-                    <h:inputText id="nombreVideo" value="#{infoVideoController.selected.nombreVideo}" title="#{bundle.CreateInfoVideoTitle_nombreVideo}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_nombreVideo}"/>
-                    <h:outputLabel value="#{bundle.CreateInfoVideoLabel_imagen}" for="imagen" />
-                    <h:inputText id="imagen" value="#{infoVideoController.selected.imagen}" title="#{bundle.CreateInfoVideoTitle_imagen}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_imagen}"/>
-                    <h:outputLabel value="#{bundle.CreateInfoVideoLabel_precio}" for="precio" />
-                    <h:inputText id="precio" value="#{infoVideoController.selected.precio}" title="#{bundle.CreateInfoVideoTitle_precio}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_precio}"/>
-                    <h:outputLabel value="#{bundle.CreateInfoVideoLabel_personaje}" for="personaje" />
-                    <h:inputText id="personaje" value="#{infoVideoController.selected.personaje}" title="#{bundle.CreateInfoVideoTitle_personaje}" />
-                    <h:outputLabel value="#{bundle.CreateInfoVideoLabel_tipoVideoidTipoVideo}" for="tipoVideoidTipoVideo" />
-                    <h:selectOneMenu id="tipoVideoidTipoVideo" value="#{infoVideoController.selected.tipoVideoidTipoVideo}" title="#{bundle.CreateInfoVideoTitle_tipoVideoidTipoVideo}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_tipoVideoidTipoVideo}">
-                        <f:selectItems value="#{tipoVideoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateInfoVideoLabel_clasificacionidClasificacion}" for="clasificacionidClasificacion" />
-                    <h:selectOneMenu id="clasificacionidClasificacion" value="#{infoVideoController.selected.clasificacionidClasificacion}" title="#{bundle.CreateInfoVideoTitle_clasificacionidClasificacion}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_clasificacionidClasificacion}">
-                        <f:selectItems value="#{clasificacionController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{infoVideoController.create}" value="#{bundle.CreateInfoVideoSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{infoVideoController.prepareList}" value="#{bundle.CreateInfoVideoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateInfoVideoIndexLink}"/>
-            </h:form>
+            <div class="container">
+                <div class="row">
+                    <h:panelGroup id="messagePanel" layout="block">
+                        <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                    </h:panelGroup>
+                    <div class="col-xs-12 col-sm-6 text-center">
+                        <div id="container-form">
+                            <h:form class="form-horizontal FormCatElec">
+                                <p style="color:#fff;" class="text-center lead" id="respRegistro">Debera de llenar todos los campos para registrarse</p>
+                                <h:panelGrid columns="2">
+                                    <h:outputLabel style="color:#fff;" value="#{bundle.CreateInfoVideoLabel_nombreVideo}" for="nombreVideo" />
+                                    <div class="form-group">
+                                        <div class="input-group">                                   
+                                            <h:inputText id="nombreVideo" value="#{infoVideoController.selected.nombreVideo}" title="#{bundle.CreateInfoVideoTitle_nombreVideo}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_nombreVideo}" class="form-control all-elements-tooltip" />
+                                        </div></div>
+                                    <h:outputLabel style="color:#fff;" value="#{bundle.CreateInfoVideoLabel_imagen}" for="imagen" />
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <h:inputText id="imagen" value="#{infoVideoController.selected.imagen}" title="#{bundle.CreateInfoVideoTitle_imagen}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_imagen}" class="form-control all-elements-tooltip" />
+                                        </div></div>
+                                    <h:outputLabel  style="color:#fff;" value="#{bundle.CreateInfoVideoLabel_precio}" for="precio" />
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <h:inputText id="precio" value="#{infoVideoController.selected.precio}" title="#{bundle.CreateInfoVideoTitle_precio}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_precio}" class="form-control all-elements-tooltip" />
+                                        </div></div>
+                                    <h:outputLabel style="color:#fff;" value="#{bundle.CreateInfoVideoLabel_personaje}" for="personaje" />
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <h:inputText id="personaje" value="#{infoVideoController.selected.personaje}" title="#{bundle.CreateInfoVideoTitle_personaje}" class="form-control all-elements-tooltip" />
+                                        </div></div>
+                                    <h:outputLabel style="color:#fff;" value="#{bundle.CreateInfoVideoLabel_tipoVideoidTipoVideo}" for="tipoVideoidTipoVideo" />
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <h:selectOneMenu id="tipoVideoidTipoVideo" value="#{infoVideoController.selected.tipoVideoidTipoVideo}" title="#{bundle.CreateInfoVideoTitle_tipoVideoidTipoVideo}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_tipoVideoidTipoVideo}" class="form-control all-elements-tooltip" >
+                                                <f:selectItems value="#{tipoVideoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div></div>
+                                    <h:outputLabel  style="color:#fff;" value="#{bundle.CreateInfoVideoLabel_clasificacionidClasificacion}" for="clasificacionidClasificacion" />
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <h:selectOneMenu id="clasificacionidClasificacion" value="#{infoVideoController.selected.clasificacionidClasificacion}" title="#{bundle.CreateInfoVideoTitle_clasificacionidClasificacion}" required="true" requiredMessage="#{bundle.CreateInfoVideoRequiredMessage_clasificacionidClasificacion}" class="form-control all-elements-tooltip" >
+                                                <f:selectItems value="#{clasificacionController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div></div>
+                                </h:panelGrid>
+                                <br />
+                                <h:commandLink action="#{infoVideoController.create}" value="#{bundle.CreateInfoVideoSaveLink}" class="btn btn-success btn-block"/>
+                                <h:commandLink action="#{infoVideoController.prepareList}" value="#{bundle.CreateInfoVideoShowAllLink}" immediate="true" class="btn btn-success btn-block"/>
+
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </ui:define>
     </ui:composition>
 

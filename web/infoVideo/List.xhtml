@@ -5,11 +5,37 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/template.xhtml">
+   <ui:composition template="/template.xhtml">
         <ui:define name="title">
             <h:outputText value="#{bundle.ListInfoVideoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
+            <nav id="navbar-auto-hidden">
+                <div class="row hidden-xs"><!-- Menu computadoras y tablets -->
+                    <div class="col-xs-4">
+                        <figure class="logo-navbar"></figure>
+                        <p class="text-navbar tittles-pages-logo">VideoMinuto</p>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="contenedor-tabla pull-right">
+                            <div class="contenedor-tr">
+                                <h:link outcome="/index" value="#{bundle.ListInfoVideoIndexLink}" class="table-cell-td"/>
+                                <h:link outcome="/clasificacion/List" value=" Clasificacion " class="table-cell-td"/>
+                                <h:link outcome="/genero/List" value=" Genero " class="table-cell-td"/>
+                                <h:link outcome="/generohasInfoVideo/List" value="Informacion de genero deVideo" class="table-cell-td"/>
+                                <h:link outcome="/lenguaje/List" value="Lenguaje de video" class="table-cell-td"/>
+                                <h:link outcome="/persona/List" value="usuario" class="table-cell-td"/>
+                                <h:link outcome="/reparto/List" value="Reparto de video" class="table-cell-td"/>
+                                <h:link outcome="/subtitulo/List" value="Subtitulos de video" class="table-cell-td"/>
+                                <h:link outcome="/tipoVideo/List" value="Tipo de Video" class="table-cell-td"/>
+                                <h:link outcome="/video/List" value="Video" class="table-cell-td"/>
+                                <h:link outcome="/videohasLenguaje/List" value="lenguaje de Video" class="table-cell-td"/>
+                                <h:link outcome="/videohasSubtitulo/List" value="sptitulos de video" class="table-cell-td"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </nav>   
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
@@ -75,10 +101,10 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{infoVideoController.prepareCreate}" value="#{bundle.ListInfoVideoCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListInfoVideoIndexLink}"/>
+                <div class="col-xs-12 col-sm-6">
+                    <h:commandLink action="#{infoVideoController.prepareCreate}" value="#{bundle.ListInfoVideoCreateLink}" class="btn btn-success btn-block"/>
+                </div>
+
             </h:form>            
         </ui:define>
     </ui:composition>
