@@ -54,7 +54,9 @@
 
         <f:view>
             <h:form>
-                <h:dataTable value="#{beanVideo.dashsachVideo()}" var="chay" border="1" cellpadding="2" cellspacing="2">
+                <h:inputText value="#{beanVideo.id}"/>
+                <h:commandButton action="#{beanVideo.consultarVideoporID()}" value="buscar"/>
+                <h:dataTable value="#{beanVideo.consultarVideoporID()}" var="chay" border="1" cellpadding="2" cellspacing="2">
                     <h:column>
                         <f:facet name="header">ID</f:facet> #{chay.idVideo}<br/>
                     </h:column>
@@ -62,7 +64,7 @@
                         <f:facet name="header">nombreCapitulo</f:facet> #{chay.nombreCapitulo}<br/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header">nombreVideo</f:facet> #{chay.infoVideoidInfoVideo.nombreVideo}<br/>
+                        <f:facet name="header">nombreVideo</f:facet> #{chay.videohasLenguajeCollection}<br/>
                     </h:column>
                 </h:dataTable>
             </h:form>

@@ -6,9 +6,11 @@
 package session;
 
 import entidades.Video;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -29,4 +31,18 @@ public class VideoFacade extends AbstractFacade<Video> {
         super(Video.class);
     }
     
+    public List<Video> consultarVideos(){
+        List <Video> lista;
+        Query consulta = em.createNamedQuery("Video.findAll");
+        lista = consulta.getResultList();
+        return lista;
+    }
+    
+    public List<Video> consultarporID(Integer id){
+        List <Video> lista;
+        Query consulta = em.createNamedQuery("Video.findByIdVideo");
+        consulta.setParameter("idVideo", id);
+        lista = consulta.getResultList();
+        return lista;
+    }
 }
